@@ -1,15 +1,32 @@
-let imdbID;
+let imdbParm;
 let postParm;
 $(document).ready(() => {
-
+ 
+	 
     $('#imdbID').click(()=>{
-          imdbID=$('#ipID').val();
+	
+          imdbParm=$('#ipID').val();
           postParm=imdbID;
           getAllData(); 
           getPoster(); 
 
     })// end get data 
 
+	  $('#byName').click(()=>{
+          imdbParm=$('#mname').val();
+          postParm=imdbID;
+          getAllData(); 
+          getPoster(); 
+
+    })// end get data 
+	
+	 $('#byYear').click(()=>{
+          imdbParm=$('#year').val();
+          postParm=imdbID;
+          getAllData(); 
+          getPoster(); 
+
+    })// end get data 
   
 
 
@@ -22,7 +39,7 @@ let getAllData = () => {
     $.ajax({
         type: 'GET', // request type GET, POST, PUT
         dataType: 'json', // requesting datatype
-        url: 'http://www.omdbapi.com/?i='+imdbID+'&apikey=d10c03f', 
+        url: 'http://www.omdbapi.com/?i='+imdbParm+'&apikey=d10c03f', 
         success: (data) => { // in case of success response
             
             console.log(data)
