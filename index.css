@@ -1,0 +1,60 @@
+.c-border-l{
+	
+	width: 20vw; 
+	height: 20rem;
+  margin-left: 2vw;
+  margin-bottom: 1vw;
+  
+}
+
+.c-border-r{
+	width: 65vw; 
+	height: 20rem;
+	margin-bottom: 1vw;
+
+}
+
+#pster{
+    width: 20vw; 
+	height: 20rem;
+}
+
+
+#copy{
+	display: none;
+}
+
+body {
+   
+    overflow-x: hidden;
+}
+
+
+@media only screen and (max-width: 900px) {
+	#pster{
+    width: 50vw; 
+	height: 20rem;
+}
+
+.card-img-top{
+width: 50vw; 
+	height: 20rem;
+
+}
+.c-border-l{
+	
+	 width: 50vw; 
+	height: 20rem;
+  margin-left: 4vw;
+  margin-bottom: 2vw;
+  
+}
+
+.c-border-r{
+	margin-left: 4vw;
+	 margin-bottom: 2vw;
+
+}
+
+
+}

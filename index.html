@@ -4,11 +4,12 @@
 
     <meta charset="utf-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <title>Ajax Jquery</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
 
 </head>
 
@@ -17,8 +18,8 @@
    <!-- Image and text -->
 <nav class="navbar navbar-light bg-light">
   <a class="navbar-brand" href="#">
-    <img src="/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-    Bootstrap
+    
+    Movie Master  - Search Infinite Movies 
   </a>
 </nav>
 
@@ -27,15 +28,17 @@
     <div class="card-header" id="headingOne">
       <h5 class="mb-0">
         <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Search by IMDB ID
+          Search by Title
         </button>
       </h5>
     </div>
 
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
       <div class="card-body">
-        Enter IMDB Title  <input type="text" id="ipID" >
-          <input type="submit" id="imdbID" > <input type="reset">
+         Enter movie name   <input type="text" id="mname" >
+          <input type="submit" id="byName"> <input type="reset" onclick="reloadPage();">
+
+       
       </div>
     </div>
   </div>
@@ -43,14 +46,14 @@
     <div class="card-header" id="headingTwo">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Search by Movie Title
+          Search by IMDB ID
         </button>
       </h5>
     </div>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
       <div class="card-body">
-         Enter movie name   <input type="text" id="mname" >
-          <input type="submit" id="byName"> <input type="reset">
+          Enter IMDB ID  <input type="text" id="ipID" class="reset">
+          <input type="submit" id="imdbID" > <input type="reset" onclick="reloadPage();">
       </div>
     </div>
   </div>
@@ -58,16 +61,18 @@
     <div class="card-header" id="headingThree">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-        Search movies by Release year
+        Search movies by Release year & title
         </button>
       </h5>
     </div>
     <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
       <div class="card-body">
-        Enter the release year of the movie
-        <div class="mx-auto" style="width: 500px;">
-         <input type="number" id="year" min="1900" max="2018">
-          <input type="submit" id="byYear"> <input type="reset">
+        Enter the release year & title
+        <div class="mx-auto" >
+       <input type="number" id="year" min="1900" max="2018"> 
+        <input type="text" id="mname1" >
+          <input type="submit" id="byYear">
+          <input type="reset" onclick="reloadPage();"> 
 </div>
         
       </div>
@@ -75,16 +80,69 @@
   </div>
 </div>
 
-<div class="card border-dark" style="width: 18rem; height: 10rem">
+
+<div class="row" id="copy1">
+<div class="split left pl-3">
+
+<div class="card c-border-l">
  
   <div class="card-img-top"  id="poster"> 
-  <img class="card-img-top" src="..." alt="Card image cap" >
+  <img class="card-img-top" src="movie.jpg" alt="Card image cap" id="pster">
 
   </div>
-  <div class="card-body border-dark">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  
+</div>
+
+  
+</div>
+
+<div class="split right">
+
+<div class="card c-border-r ">
+      <ul class="list-group list-group-flush">
+    <li class="list-group-item" id="title">Title :</li>    
+    <li class="list-group-item" id="act">Actors : </li>
+    <li class="list-group-item" id="dir">Director : </li>
+    <li class="list-group-item" id="gen">Genre : </li>
+    <li class="list-group-item" id="ir">IMDB Rating : </li>
+    <li class="list-group-item" id="rt">Run Time : </li>
+  </ul>
+
   </div>
 </div>
+</div>
+  
+  <div class="row" id="copy">
+<div class="split left pl-3">
+
+<div class="card c-border-l">
+ 
+  <div class="card-img-top"  id="poster"> 
+  <img class="card-img-top" src="movie.jpg" alt="Card image cap" id="pster">
+
+  </div>
+  
+</div>
+
+  
+</div>
+
+<div class="split right">
+
+<div class="card c-border-r ">
+      <ul class="list-group list-group-flush">
+    <li class="list-group-item" id="title">Title :</li>    
+    <li class="list-group-item" id="act">Actors : </li>
+    <li class="list-group-item" id="dir">Director : </li>
+    <li class="list-group-item" id="gen">Genre : </li>
+    <li class="list-group-item" id="ir">IMDB Rating : </li>
+    <li class="list-group-item" id="rt">Run Time : </li>
+  </ul>
+
+  </div>
+</div>
+</div>
+  
 
 
 </body>
@@ -98,6 +156,14 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 <script src="index.js"></script>
+
+<script type="text/javascript">
+   
+
+    function reloadPage(){
+       location.reload(true);
+    }
+</script>
 
 
 
