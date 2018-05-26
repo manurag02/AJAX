@@ -11,7 +11,7 @@ $(document).ready(() => {
 	        
           imdbParm=$('#ipID').val();
           postParm=imdbID;
-          urlParm='http://www.omdbapi.com/?i='+imdbParm+'&apikey=d10c03f';
+          urlParm='https://www.omdbapi.com/?i='+imdbParm+'&apikey=d10c03f';
           dataCount=dataCount+1;
           getAllData(); 
     })// end get data 
@@ -20,7 +20,7 @@ $(document).ready(() => {
 	  $('#byName').click(()=>{
           imdbParm=$('#mname').val();
           postParm=imdbID;
-          urlParm='http://www.omdbapi.com/?t='+imdbParm+'&apikey=d10c03f';
+          urlParm='https://www.omdbapi.com/?t='+imdbParm+'&apikey=d10c03f';
             dataCount=dataCount+1;
           getAllData(); 
          
@@ -31,7 +31,7 @@ $(document).ready(() => {
           imdbParm=$('#year').val();
           imdbParm1=$('#mname1').val();
           postParm=imdbID;
-          urlParm='http://www.omdbapi.com/?y='+imdbParm+'&t='+imdbParm1+'&apikey=d10c03f';
+          urlParm='https://www.omdbapi.com/?y='+imdbParm+'&t='+imdbParm1+'&apikey=d10c03f';
           dataCount=dataCount+1;
           getAllData(); 
            
